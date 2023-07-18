@@ -1,4 +1,4 @@
-### Para encontrar o endereço MAC do ESP32, você pode siga as seguintes etapas:
+### Para encontrar o endereço MAC do ESP32, siga as seguintes etapas:
 
 1. Conecte o seu ESP32 ao computador via USB.
 
