@@ -1,10 +1,15 @@
-Para encontrar o Para encontrar o endereço MAC do ESP32, você pode siga as seguintes etapas:
+### Para encontrar o Para encontrar o endereço MAC do ESP32, você pode siga as seguintes etapas:
 
 1. Conecte o seu ESP32 ao computador via USB.
 
 2. Abra a Arduino IDE e crie um novo sketch.
 
 3. Copie e cole o código fornecido na área de trabalho do sketch.
+
+<p align="center">
+  <img src= https://github.com/andresima0/Help---ESP32/assets/111400782/152a8779-c251-4f36-862f-aea2f01a666c)" 
+  alt= "MacAddress" width="700">
+</p>
 
 4. Verifique se a velocidade de comunicação serial está configurada como 9600 baud. Você pode ajustar a velocidade no campo "Serial.begin(9600)".
 
