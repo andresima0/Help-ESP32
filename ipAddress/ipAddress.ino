@@ -1,6 +1,6 @@
 #include <WiFi.h>
 
-const char* ssid ="xxxxx";     // Replace with your Wi-Fi network name (SSID)
+const char* ssid ="xxxxx";      // Replace with your Wi-Fi network name (SSID)
 const char* password = "xxxxx"; // Replace with your Wi-Fi network password
 
 void setup() {
