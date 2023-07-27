@@ -19,3 +19,5 @@
   <img src= "https://github.com/andresima0/Help-ESP32/assets/111400782/78ae37e0-6f2f-47c3-82b4-8fe3a3408c3f)" 
   alt= "BluetoothAddress" width="800">
 </p>
+
+Para mais informações, visite: https://techtutorialsx.com/2018/03/09/esp32-arduino-getting-the-bluetooth-device-address/
