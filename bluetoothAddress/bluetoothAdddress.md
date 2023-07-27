@@ -14,3 +14,8 @@
 
 5. Visualização do Endereço Bluetooth:
    - Assim que o ESP32 for inicializado, você verá uma mensagem "ESP32 Bluetooth Address:" seguida pelo endereço Bluetooth do ESP32, no formato "XX:XX:XX:XX:XX:XX", exibido no Monitor Serial.
+  
+<p align="center">
+  <img src= "https://github.com/andresima0/Help-ESP32/assets/111400782/78ae37e0-6f2f-47c3-82b4-8fe3a3408c3f)" 
+  alt= "BluetoothAddress" width="800">
+</p>
