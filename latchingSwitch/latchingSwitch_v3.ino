@@ -1,3 +1,6 @@
+/*Este programa permite controlar pinos GPIO do ESP32 via Bluetooth ou através de um botão físico,
+possibilitando a alternância dos estados de saída. É uma solução versátil para automação controlada remotamente.*/
+
 #include <BLEDevice.h>
 #include <BLEServer.h>
 
