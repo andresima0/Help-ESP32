@@ -1,6 +1,6 @@
 // Latching switch que, a cada pulso de botão, alterna entre três saídas (GPIOs 25, 26 e 27) em sequência, ligando uma e desligando a anterior.
 
-/*Foi utilizado uma array outputPins para armazenar as três GPIOs de saída (2, 4 e 5). 
+/*Foi utilizado uma array outputPins para armazenar as três GPIOs de saída (25, 26 e 27). 
 O interruptor de latching alterna entre essas saídas em sequência a cada pulso do botão.
 A função toggleOutput() é responsável por alternar a saída atual e avançar para a próxima saída em sequência. 
 Um atraso (toggleDelay) é usado para evitar trocas rápidas e indesejadas das saídas. A saída atual é controlada pela variável currentOutput.*/
