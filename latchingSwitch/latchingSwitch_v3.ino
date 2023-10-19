@@ -1,5 +1,5 @@
-/*Este programa permite controlar pinos GPIO do ESP32 via Bluetooth ou através de um botão físico,
-possibilitando a alternância dos estados de saída. É uma solução versátil para automação controlada remotamente.*/
+/*Esse código consiste em uma latching switch que ativa portas físicas de um ESP32
+e apresenta o estado atual via requisições Bluetooth, para algum aplicativo de visualização */
 
 #include <BLEDevice.h>
 #include <BLEServer.h>
