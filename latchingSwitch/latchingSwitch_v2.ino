@@ -2,8 +2,7 @@
 
 /*Foi utilizado uma array outputPins para armazenar as três GPIOs de saída (25, 26 e 27). 
 O interruptor de latching alterna entre essas saídas em sequência a cada pulso do botão.
-A função toggleOutput() é responsável por alternar a saída atual e avançar para a próxima saída em sequência. 
-Um atraso (toggleDelay) é usado para evitar trocas rápidas e indesejadas das saídas. A saída atual é controlada pela variável currentOutput.*/
+.*/
 
 const int buttonPin = 12;
 const int outputPins[] = {25, 26, 27};
@@ -33,16 +32,16 @@ void loop() {
       buttonState = reading;
 
       if (buttonState == LOW) {
-        // Se o botão está pressionado, alterne a saída
+        // Se o botão está pressionado, alterna a saída
         outputState[currentOutput] = !outputState[currentOutput];
         digitalWrite(outputPins[currentOutput], outputState[currentOutput]);
 
-        // Desligue a saída anterior
+        // Desliga a saída anterior
         int previousOutput = (currentOutput + 2) % 3;
         outputState[previousOutput] = false;
         digitalWrite(outputPins[previousOutput], outputState[previousOutput]);
 
-        // Atualize a saída atual para a próxima
+        // Atualiza a saída atual para a próxima
         currentOutput = (currentOutput + 1) % 3;
       }
     }
