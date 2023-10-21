@@ -2,6 +2,7 @@
 
 Um latching switch, ou interruptor de retenção, é um tipo de interruptor que mantém sua posição (ligado ou desligado) após ser acionado até que seja novamente pressionado para alternar seu estado.
 
+
 # LatchingSwitch_v1
 #### :thumbsup: O código disponibilizado é um excelente exemplo de latching switch, desenvolvido no intuito de resolver o mau funcionamento de acionamento que outros códigos genéricos estavam apresentando.
 
