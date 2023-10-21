@@ -1,4 +1,4 @@
-### Para encontrar o endereço IP do ESP32, você pode seguir os procedimentos abaixo:
+## Para encontrar o endereço IP do ESP32, você pode seguir os procedimentos abaixo:
 
 1. Conexão e Configuração Wi-Fi:
    Certifique-se de ter substituído as variáveis `ssid` e `password` pelos detalhes corretos da sua rede Wi-Fi. O ESP32 precisa estar conectado à sua rede Wi-Fi para obter um endereço IP válido.
