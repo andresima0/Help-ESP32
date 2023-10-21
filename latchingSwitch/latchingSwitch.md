@@ -1,9 +1,8 @@
-# Latching Switch
+# Latching Switch - explicação de como tudo funciona
 
 Um latching switch, ou interruptor de retenção, é um tipo de interruptor que mantém sua posição (ligado ou desligado) após ser acionado até que seja novamente pressionado para alternar seu estado.
 
-# LatchingSwitch_v1:
-
+# LatchingSwitch_v1
 #### :thumbsup: O código disponibilizado é um excelente exemplo de latching switch, desenvolvido no intuito de resolver o mau funcionamento de acionamento que outros códigos genéricos estavam apresentando.
 
 1. Declaração de variáveis:
@@ -31,9 +30,37 @@ Um latching switch, ou interruptor de retenção, é um tipo de interruptor que 
 A principal razão para usar `millis()` em vez de `delay()` é que o `delay()` bloquearia o programa e impediria a detecção de mudanças no botão durante o atraso. Usando `millis()`, o código pode continuar monitorando o botão e responder a eventos em tempo real, enquanto ainda fornece uma função de debounce para garantir que apenas uma ação seja tomada quando o botão é pressionado, evitando falsos gatilhos devido a ruídos.
 
 #
+# LatchingSwitch_v2
+Este código implementa um latching switch que, a cada pulso de botão, alterna entre três saídas (GPIOs 25, 26 e 27) em sequência, ligando uma saída e desligando a anterior. Aqui está uma explicação passo a passo do funcionamento do código:
 
+1. Definição de pinos e variáveis:
+   - `buttonPin`: Pino GPIO usado para o botão.
+   - `outputPins[]`: Um array que contém os pinos GPIO das três saídas (25, 26 e 27).
+   - `currentOutput`: Uma variável que rastreia a saída atual que está ligada.
+   - `buttonState`: Variável que rastreia o estado atual do botão.
+   - `lastButtonState`: Variável que rastreia o último estado do botão.
+   - `lastDebounceTime`: Uma variável que rastreia o tempo do último debounce.
+   - `debounceDelay`: O intervalo de tempo usado para debounce.
+   - `outputState[]`: Um array que rastreia o estado atual de cada saída (ligada ou desligada).
+
+2. Função `setup()`:
+   - Configura os pinos das saídas e do botão, definindo as saídas como OUTPUT e o botão como INPUT_PULLUP. Isso ativa um resistor de pull-up interno para o botão.
+   
+3. Função `loop()`:
+   - Lê o estado atual do botão.
+   - Implementa um mecanismo de debounce para evitar respostas falsas do botão, garantindo que um pressionamento de botão seja válido apenas se o estado do botão permanecer estável por um determinado período de tempo.
+   - Se o estado do botão for diferente do último estado registrado, atualiza o tempo do último debounce.
+   - Se o tempo decorrido desde o último debounce for maior que o valor definido em `debounceDelay`, o código verifica se o estado do botão atual é diferente do estado do botão anterior.
+   - Se o botão estiver pressionado (estado LOW) e for um novo pressionamento (diferente do estado anterior), o latching switch é acionado.
+   - O código alterna o estado da saída atual (ligada ou desligada) usando a variável `outputState` e atualiza o pino da saída correspondente.
+   - Desliga a saída anterior, garantindo que apenas uma saída esteja ligada por vez.
+   - Atualiza a saída atual para a próxima na sequência (25, 26, 27) usando `currentOutput`.
+   - O processo de latching switch é concluído e aguarda o próximo pressionamento de botão.
+
+O código garante que apenas uma das saídas seja ligada por vez e que a transição entre elas seja feita a cada pressionamento do botão. Isso permite alternar entre as saídas 25, 26 e 27 sequencialmente. O código também inclui um mecanismo de debounce para evitar flutuações de sinal quando o botão é pressionado.
+
+#
 # LatchingSwitch_v3
-
 #### Implementação de uma latching switch que envia sinais de status via Bluetooth BLE. :warning:Certifique-se de que os UUIDs correspondam ao que é esperado pelo aplicativo Bluetooth BLE.
 
 1. Inclusão das bibliotecas BLE: O código começa incluindo as bibliotecas necessárias para a comunicação Bluetooth BLE, como `BLEDevice.h`, `BLEServer.h`, e `BLECharacteristic.h`.
