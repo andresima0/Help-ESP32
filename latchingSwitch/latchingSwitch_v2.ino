@@ -1,8 +1,9 @@
-// Latching switch que, a cada pulso de botão, alterna entre três saídas (GPIOs 25, 26 e 27) em sequência, ligando uma e desligando a anterior.
-
-/*Foi utilizado uma array outputPins para armazenar as três GPIOs de saída (25, 26 e 27). 
-O interruptor de latching alterna entre essas saídas em sequência a cada pulso do botão.
-.*/
+/*
+  Latching switch que, a cada pulso de botão, alterna entre três saídas (GPIOs 25, 26 e 27) 
+  em sequência, ligando uma e desligando a anterior.
+  Foi utilizado uma array outputPins para armazenar as três GPIOs de saída. 
+  O interruptor de latching alterna entre essas saídas em sequência a cada pulso do botão.
+*/
 
 const int buttonPin = 12;
 const int outputPins[] = {25, 26, 27};
