@@ -2,7 +2,7 @@
 
 Um latching switch, ou interruptor de retenção, é um tipo de interruptor que mantém sua posição (ligado ou desligado) após ser acionado até que seja novamente pressionado para alternar seu estado.
 
-## Descrição do código:
+# LatchingSwitch_v1:
 
 #### :thumbsup: O código disponibilizado é um excelente exemplo de latching switch, desenvolvido no intuito de resolver o mau funcionamento de acionamento que outros códigos genéricos estavam apresentando.
 
@@ -29,3 +29,27 @@ Um latching switch, ou interruptor de retenção, é um tipo de interruptor que 
    - O `lastButtonState` é atualizado para o valor atual de `reading`, para que ele possa ser usado na próxima iteração para detectar mudanças no estado do botão.
 
 A principal razão para usar `millis()` em vez de `delay()` é que o `delay()` bloquearia o programa e impediria a detecção de mudanças no botão durante o atraso. Usando `millis()`, o código pode continuar monitorando o botão e responder a eventos em tempo real, enquanto ainda fornece uma função de debounce para garantir que apenas uma ação seja tomada quando o botão é pressionado, evitando falsos gatilhos devido a ruídos.
+
+#
+
+# LatchingSwitch_v3
+
+#### Implementação de uma latching switch que envia sinais de status via Bluetooth BLE. :warning:Certifique-se de que os UUIDs correspondam ao que é esperado pelo aplicativo Bluetooth BLE.
+
+1. Inclusão das bibliotecas BLE: O código começa incluindo as bibliotecas necessárias para a comunicação Bluetooth BLE, como `BLEDevice.h`, `BLEServer.h`, e `BLECharacteristic.h`.
+
+2. Definição de pinos e variáveis: Os pinos GPIO usados para o botão (buttonPin) e saídas (outputPins) são definidos. Além disso, variáveis são declaradas para controlar o estado do botão, o estado de debounce, o estado das saídas e o índice da saída atual.
+
+3. Definição de UUIDs: São definidos UUIDs para o serviço e a característica Bluetooth BLE, que são usados para identificar e distinguir os dispositivos Bluetooth.
+
+4. Classe de Callbacks para a característica BLE: É criada uma classe chamada `MySwitchCallbacks` que herda da classe `BLECharacteristicCallbacks`. Essa classe é usada para lidar com as operações de escrita na característica BLE que controla o switch.
+
+5. Função `setup()`: Nesta função, a configuração inicial é feita, incluindo a definição dos pinos de saída, configuração do botão como entrada, inicialização do dispositivo BLE com um nome e criação do servidor BLE e serviço. Além disso, é criada a característica BLE de Switch com as propriedades de leitura, escrita e notificação.
+
+6. Função `loop()`: No loop principal, o código verifica o estado do botão. Ele implementa um mecanismo de debounce para evitar respostas falsas de pressionamento de botão. Quando o botão é pressionado (estado LOW), o sistema de latching switch é acionado.
+
+   - A saída atual é alternada (ligada ou desligada).
+   - A saída anterior é desligada.
+   - O índice da saída atual é atualizado para a próxima saída.
+   - O valor da característica BLE de Switch é atualizado com um número (1, 2 ou 3) para indicar a saída atual.
+   - A notificação BLE é enviada para informar o status da saída ao aplicativo Bluetooth BLE conectado.
