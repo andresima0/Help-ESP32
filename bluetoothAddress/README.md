@@ -1,4 +1,4 @@
-### Para encontrar o endereço Bluetooth do ESP32, você pode seguir os procedimentos abaixo:
+## Para encontrar o endereço Bluetooth do ESP32, você pode seguir os procedimentos abaixo:
 
 1. Configuração do Ambiente:
    - Certifique-se de ter o ambiente de desenvolvimento Arduino configurado corretamente para trabalhar com o ESP32. Se necessário, instale a placa ESP32 e as bibliotecas relevantes para suportar a comunicação Bluetooth.
