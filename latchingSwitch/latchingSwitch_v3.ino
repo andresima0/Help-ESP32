@@ -1,4 +1,10 @@
-/* Esta versão implementa um latching switch que envia sinais de status para um aplicativo de controle */
+/* 
+   O código implementa um sistema de latching switch em um dispositivo ESP32,
+   permitindo alternar entre três saídas GPIO (portas 25, 26 e 27) e enviar 
+   o status atual para um aplicativo via Bluetooth BLE. 
+   Além disso, o código também controla o estado de oito pinos GPIO adicionais 
+   com base em comandos recebidos via Bluetooth BLE.
+*/
 
 #include <BLEDevice.h>
 #include <BLEServer.h>
