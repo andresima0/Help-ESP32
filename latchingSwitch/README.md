@@ -35,6 +35,8 @@ A principal razão para usar `millis()` em vez de `delay()` é que o `delay()` b
 # LatchingSwitch_v2
 Este código implementa um latching switch que, a cada pulso de botão, alterna entre três saídas (GPIOs 25, 26 e 27) em sequência, ligando uma saída e desligando a anterior. Aqui está uma explicação passo a passo do funcionamento do código:
 
+https://github.com/andresima0/Help-ESP32/assets/111400782/c5db3d2d-5b93-417e-bdf7-f661cfdf1c90
+
 1. Definição de pinos e variáveis:
    - `buttonPin`: Pino GPIO usado para o botão.
    - `outputPins[]`: Um array que contém os pinos GPIO das três saídas (25, 26 e 27).
