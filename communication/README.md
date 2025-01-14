@@ -1,35 +1,58 @@
+
 # SCALE SIMULATOR
 
-Simulador de balança utilizando ESP32, que envia dados randômicos de peso.
-Destinado para teste de dispositivos de leitura de balanças, caso não haja uma balança física.
+Simulador de balança utilizando ESP32, projetado para gerar dados randômicos de peso, permitindo o teste de dispositivos de leitura de balanças na ausência de um equipamento físico.
 
-1) Funcionamento:
+---
 
-- O SCALE SIMULATOR aguarda solicitação do dispositivo externo para iniciar a transmissão de dados. 
-- Este protocolo de comunicação utiliza:
+## 📋 Funcionalidades
 
-  * 1 Stop Bit;
-  * 8 Bits de dados;
-  * Sem paridade.
+O **SCALE SIMULATOR** opera como uma balança simulada, enviando dados conforme solicitado por um dispositivo externo. Ele utiliza um protocolo de comunicação simples e eficiente:
 
-- O envio dos dados é iniciado quando o dispositivo externo envia o comando de solicitação “ENQ”.
-    ENQ = Caracter ASCII (05H, ou 0x05) enviado pelo dispositivo externo.
+1. **Protocolo de Comunicação:**
+   - **Configurações:**
+     - 1 Stop Bit;
+     - 8 Bits de dados;
+     - Sem paridade.
+   - **Comando de solicitação:** 
+     - O dispositivo externo deve enviar o comando `ENQ` (ASCII 05H ou 0x05) para iniciar a transmissão.
+   - **Pacote de Dados Enviado:** 
+     ```
+     [STX][PPPPP][ETX]
+     ```
+     - `STX` (02H ou 0x02): Início da transmissão.
+     - `PPPPP`: Peso em gramas, representado por 5 caracteres ASCII (sem ponto decimal).
+     - `ETX` (03H ou 0x03): Término da transmissão.
 
-- Após receber o comando, o SCALE SIMULATOR enviará o seguinte pacote de dados:
-  
-    [STX][PPPPP][ETX] 
-  
-  onde:
-  * STX = Caracter ASCII (02H, ou 0x02) – Início da transmissão;
-  * PPPPP = 5 caracteres ASCII representando o peso em gramas (sem ponto decimal);
-  * ETX = Caracter ASCII (03H, ou 0x03) – Término da transmissão.
+---
 
-2) Conexões:
+## ⚙️ Conexões
 
-     ESP32 SCALE SIMULATOR | Dispositivo externo (Outro ESP32)
-              RX (16)      |    TX (17)
-              TX (17)      |    RX (16)
-              GND          |    GND
+Configure as conexões conforme o esquema abaixo:
 
-- IMPORTANTE: Certifique-se de compartilhar o mesmo GND.
-- Caso haja uma balança real, deve ser utilizado um módulo RS232 para conversão TTL serial.
+| **ESP32 SCALE SIMULATOR** | **Dispositivo Externo (Outro ESP32)** |
+|----------------------------|---------------------------------------|
+| RX (16)                   | TX (17)                              |
+| TX (17)                   | RX (16)                              |
+| GND                       | GND                                  |
+
+### 🔑 Observações Importantes:
+- Certifique-se de conectar todos os dispositivos ao mesmo **GND**.
+- Para usar uma balança real, é necessário incluir um módulo **RS232** para conversão TTL serial.
+
+---
+
+## 🚀 Como Usar
+
+1. Conecte os dispositivos conforme descrito na seção de conexões.
+2. Programe o dispositivo externo para enviar o comando `ENQ`.
+3. O SCALE SIMULATOR responderá com o peso simulado no formato especificado.
+
+---
+
+## 🛠️ Requisitos
+
+- **Hardware Necessário:**
+  - ESP32 para o simulador.
+  - Dispositivo externo com comunicação serial (outro ESP32, microcontrolador ou computador).
+  - Módulo RS232 (caso utilize uma balança real).
