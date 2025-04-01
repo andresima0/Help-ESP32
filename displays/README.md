@@ -1,4 +1,4 @@
-## Pin Configuration - ILI9488 3.5" Display with Touch (480x320 pixels)
+# Pin Configuration - ILI9488 3.5" Display with Touch (480x320 pixels)
 
 This display uses SPI communication for both image control (Display) and the touch panel. Below are the connections to an ESP32:
 
@@ -35,9 +35,9 @@ This display uses SPI communication for both image control (Display) and the tou
 - Make sure signal levels are compatible with ESP32's **3.3V logic**.
 - You may need pull-up/pull-down resistors on the **PEN** (IRQ) pin.
 
-### Portuguese version
+# Portuguese version
 
-## Configuração de Pinos - Display ILI9488 3.5" com Touch (480x320 pixels)
+# Configuração de Pinos - Display ILI9488 3.5" com Touch (480x320 pixels)
 
 Este display utiliza comunicação SPI tanto para o controle da imagem (Display) quanto para o touch (Touch Panel). Abaixo estão as conexões com um ESP32:
 
