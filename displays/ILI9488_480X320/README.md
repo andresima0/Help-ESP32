@@ -14,39 +14,73 @@ This repository contains tested and verified examples for using the ILI9488 3.5"
 
 1. Wire the hardware according to the pin configuration provided below.
 2. Download and install the `TFT_eSPI` library:
-   - **Option A (Recommended):** Use the version included in this repository to ensure full compatibility.
-   - **Option B:** Download the official version from [Bodmer’s GitHub](https://github.com/Bodmer/TFT_eSPI) and **replace** the `User_Setup.h` file with the one provided here.
+   - **Option A:** Use the version included in this repository to ensure full compatibility.
+   - **Option B:** Use the official version from [Bodmer’s GitHub](https://github.com/Bodmer/TFT_eSPI) but **replace** the `User_Setup.h` file with the one provided here.
 
 ⚠️ **Important:** You must use the exact configuration provided. Any changes or missing files may prevent the display from working properly.
 
 ---
 
-## 📦 Using with Arduino IDE or PlatformIO
+## 🧩 Installing the `TFT_eSPI` Library
 
-### 🧩 Arduino IDE
+### ✅ Arduino IDE
 
-1. Install the `TFT_eSPI` library via the Library Manager or manually.
-2. Replace the file `User_Setup.h` inside the library folder with the one provided in this repository.
-   - On Windows, the path is usually:  
-     `Documents/Arduino/libraries/TFT_eSPI/User_Setup.h`
-3. Restart the Arduino IDE if it is open.
-4. Compile and upload the example sketches.
+1. Via Library Manager (recommended)
+   
+   1.1. In Arduino IDE, go to **Sketch > Include Library > Manage Libraries...**  
+   1.2. Search for **TFT_eSPI** and install the library by **Bodmer**.  
+   1.3. Replace the `User_Setup.h` file inside the library folder with the one from this repository:
+
+   📁 Default path on Windows:  
+   `Documents/Arduino/libraries/TFT_eSPI/User_Setup.h`
+
+   🔗 Custom setup file:  
+   [User_Setup.h (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/User_Setup.h)
+
+   1.4. Restart Arduino IDE if it's already open.  
+   1.5. Compile and upload the example sketches.
+
+2. Manual Installation via ZIP
+
+   2.1. Download the custom library from the link below:  
+   🔗 [TFT_eSPI.zip (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/TFT_eSPI.zip)
+
+   2.2. In Arduino IDE, go to **Sketch > Include Library > Add .ZIP Library…**  
+   2.3. Select the downloaded `.zip` file.  
+   2.4. Make sure the folder is named `TFT_eSPI` under:  
+   `Documents/Arduino/libraries/TFT_eSPI`
+
+---
 
 ### 🧰 PlatformIO (VS Code)
 
-1. Add the following to your `platformio.ini`:
+1. Using `platformio.ini` (recommended)
+
+   1.1. In your project, open the `platformio.ini` file and add:
    ```ini
    lib_deps =
      bodmer/TFT_eSPI
    ```
-2. Inside your project directory, create a file at:  
-   `lib/TFT_eSPI/User_Setup.h`
-3. Copy the `User_Setup.h` from this repository into that location.
-4. PlatformIO will prioritize this file over the default.
 
----
+   1.2. Create a custom setup file at:  
+   📁 `lib/TFT_eSPI/User_Setup.h`
 
-## 📌 Pin Configuration - ILI9488 3.5" Display with Touch (480x320 pixels)
+   1.3. Copy the content of the custom `User_Setup.h` into this location:  
+   🔗 [User_Setup.h (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/User_Setup.h)
+
+   > ✅ PlatformIO will prioritize this `User_Setup.h` from the `lib/` folder during compilation.
+
+2. Manual Installation via ZIP
+   
+   2.1. Download the custom library from the link below:  
+   🔗 [TFT_eSPI.zip (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/TFT_eSPI.zip)
+
+   2.2. Extract the contents into your project folder, for example:  
+   📁 `lib/TFT_eSPI/`
+
+   2.3. Make sure the custom `User_Setup.h` is included in that folder.
+
+## 📌 Pin Configuration
 
 This display uses SPI communication for both image control (Display) and the touch panel. Below are the connections to an ESP32:
 
@@ -87,50 +121,81 @@ This display uses SPI communication for both image control (Display) and the tou
 
 Este repositório contém exemplos testados e verificados para o uso do display ILI9488 3.5" SPI com ESP32. Se você estiver utilizando este modelo, siga atentamente as instruções abaixo para garantir uma montagem correta e o funcionamento adequado.
 
-### ✅ Requisitos
+## ✅ Requisitos
 
 - Placa de desenvolvimento ESP32  
 - Display TFT ILI9488 3.5" (480x320, interface SPI)  
 - Fiação correta entre os pinos do display e do ESP32, conforme a seção [Configuração de Pinos](#configuração-de-pinos---display-ili9488-35-com-touch-480x320-pixels)  
 - Biblioteca `TFT_eSPI` (versão e configuração exatas deste repositório)
 
-### ⚙️ Instruções de Instalação
+## ⚙️ Instruções de Instalação
 
 1. Realize a conexão do hardware conforme a configuração de pinos descrita abaixo.
 2. Baixe e instale a biblioteca `TFT_eSPI`:
-   - **Opção A (Recomendada):** Utilize a versão incluída neste repositório para garantir total compatibilidade.
-   - **Opção B:** Baixe a versão oficial no [GitHub do Bodmer](https://github.com/Bodmer/TFT_eSPI) e **substitua** o arquivo `User_Setup.h` pelo fornecido aqui.
+   - **Opção A:** Utilize a versão incluída neste repositório para garantir total compatibilidade.
+   - **Opção B:** Use a versão oficial no [GitHub do Bodmer](https://github.com/Bodmer/TFT_eSPI) mas **substitua** o arquivo `User_Setup.h` pelo fornecido aqui.
 
 ⚠️ **Importante:** É fundamental utilizar a configuração exata disponibilizada. Qualquer modificação ou ausência de arquivos pode impedir o funcionamento correto do display.
 
 ---
 
-## 📦 Usando com Arduino IDE ou PlatformIO
+## 🧩 Instalação da Biblioteca `TFT_eSPI`
 
-### 🧩 Arduino IDE
+### ✅ Arduino IDE
 
-1. Instale a biblioteca `TFT_eSPI` pelo Gerenciador de Bibliotecas ou manualmente.
-2. Substitua o arquivo `User_Setup.h` da pasta da biblioteca pelo que está neste repositório.
-   - No Windows, o caminho geralmente é:  
-     `Documentos/Arduino/libraries/TFT_eSPI/User_Setup.h`
-3. Reinicie o Arduino IDE se ele estiver aberto.
-4. Compile e envie os exemplos.
+1. Pelo Gerenciador de Bibliotecas (recomendado)
+   
+   1.1. Na Arduino IDE, vá em **Sketch > Include Library > Manage Libraries...**  
+   1.2. Procure por **TFT_eSPI** e instale a biblioteca do autor **Bodmer**.  
+   1.3. Substitua o arquivo `User_Setup.h` dentro da pasta da biblioteca pelo fornecido neste repositório:
 
-### 🧰 PlatformIO (VS Code)
+   📁 Caminho padrão no Windows:  
+   `Documents/Arduino/libraries/TFT_eSPI/User_Setup.h`
 
-1. Adicione o seguinte ao seu `platformio.ini`:
+   🔗 Arquivo personalizado:  
+   [User_Setup.h (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/User_Setup.h)
+
+   1.4. Reinicie a Arduino IDE (caso já esteja aberta).  
+   1.5. Compile e envie os exemplos para o seu dispositivo.
+
+3. Instalação manual via ZIP
+   2.1. Baixe a versão personalizada da biblioteca no link abaixo:  
+   🔗 [TFT_eSPI.zip (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/TFT_eSPI.zip)
+
+   2.2. Na Arduino IDE, vá em **Sketch > Include Library > Add .ZIP Library…**  
+   2.3. Selecione o arquivo `.zip` baixado.  
+   2.4. Certifique-se de que a pasta tenha o nome `TFT_eSPI` dentro da pasta:  
+   `Documents/Arduino/libraries/TFT_eSPI`
+
+---
+
+## 🧰 PlatformIO (VS Code)
+
+1. Pelo `platformio.ini` (recomendado)
+   1.1. No seu projeto, abra o arquivo `platformio.ini` e adicione:
    ```ini
    lib_deps =
      bodmer/TFT_eSPI
    ```
-2. Dentro do diretório do projeto, crie o arquivo:  
-   `lib/TFT_eSPI/User_Setup.h`
-3. Copie o `User_Setup.h` deste repositório para essa localização.
-4. O PlatformIO irá priorizar esse arquivo sobre o padrão da biblioteca.
 
----
+   1.2. Crie um arquivo customizado com suas configurações no caminho:  
+   📁 `lib/TFT_eSPI/User_Setup.h`
 
-## 📌 Configuração de Pinos - Display ILI9488 3.5" com Touch (480x320 pixels)
+   1.3. Copie o conteúdo do `User_Setup.h` personalizado para esse local:  
+   🔗 [User_Setup.h (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/User_Setup.h)
+
+   > ✅ O PlatformIO dará prioridade para esse `User_Setup.h` da pasta `lib/` ao compilar.
+
+2. Instalação manual via ZIP
+   2.1. Baixe a biblioteca personalizada no link:  
+   🔗 [TFT_eSPI.zip (GitHub)](https://github.com/andresima0/Help-ESP32/blob/main/displays/ILI9488_480X320/TFT_eSPI.zip)
+
+   2.2. Extraia o conteúdo dentro da pasta do seu projeto, por exemplo:  
+   📁 `lib/TFT_eSPI/`
+
+   2.3. Certifique-se de que o `User_Setup.h` personalizado está incluído nessa pasta.
+
+## 📌 Configuração de Pinos
 
 Este display utiliza comunicação SPI tanto para o controle da imagem (Display) quanto para o touch (Touch Panel). Abaixo estão as conexões com um ESP32:
 
