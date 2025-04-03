@@ -88,7 +88,7 @@ This display uses SPI communication for both image control (Display) and the tou
 
 | Pin | Name | ESP32 | Function |
 |-----|------|-------|----------|
-| 1   | VDD  | 5V    | Power Supply (3.3V or 5V) |
+| 1   | VDD  | VIN   | Power Supply (3.3V or 5V) |
 | 2   | GND  | GND   | Ground |
 | 3   | CS   | D15   | Chip Select for Display |
 | 4   | RST  | EN    | Reset for Display Controller |
@@ -203,7 +203,7 @@ Este display utiliza comunicação SPI tanto para o controle da imagem (Display)
 
 | Pino | Nome | ESP32 | Função |
 |------|------|-------|--------|
-| 1    | VDD  | 5V    | Alimentação (3V3 ou 5V) |
+| 1    | VDD  | VIN   | Alimentação (3V3 ou 5V) |
 | 2    | GND  | GND   | Terra |
 | 3    | CS   | D15   | Chip Select do Display |
 | 4    | RST  | EN    | Reset do Controlador do Display |
