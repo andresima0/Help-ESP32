@@ -3,6 +3,8 @@
 
 This repository contains tested and verified examples for using the ILI9488 3.5" SPI display with an ESP32. If you are working with this model, follow the instructions below carefully to ensure correct setup and operation.
 
+https://github.com/user-attachments/assets/d003ab97-f8d3-4522-9e78-adcebe305b31
+
 ## ✅ Requirements
 
 - ESP32 development board  
@@ -120,6 +122,8 @@ This display uses SPI communication for both image control (Display) and the tou
 ## 📘 Versão em Português
 
 Este repositório contém exemplos testados e verificados para o uso do display ILI9488 3.5" SPI com ESP32. Se você estiver utilizando este modelo, siga atentamente as instruções abaixo para garantir uma montagem correta e o funcionamento adequado.
+
+https://github.com/user-attachments/assets/d003ab97-f8d3-4522-9e78-adcebe305b31
 
 ## ✅ Requisitos
 
